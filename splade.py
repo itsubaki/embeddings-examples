@@ -1,4 +1,5 @@
 from yasem import SpladeEmbedder
+import time
 
 model_name = "hotchpotch/japanese-splade-v2"
 embedder = SpladeEmbedder(model_name)
@@ -10,7 +11,10 @@ sentences = [
     "車を長持ちさせるには、消耗品を適切なタイミングで交換することが重要です。",
 ]
 
+start = time.perf_counter()
 embeddings = embedder.encode(sentences)
+print(f"encode: {time.perf_counter() - start:.4f} sec")
+print()
 
 for i, emb in enumerate(embeddings):
     print(sentences[i])

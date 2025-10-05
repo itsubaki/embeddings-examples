@@ -1,2 +1,1 @@
-# splade-examples
-SPLADE examples
+# embeddings-examples
